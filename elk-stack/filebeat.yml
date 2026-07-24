@@ -1,0 +1,41 @@
+# ============================================================================
+# Filebeat Configuration
+# Hybrid Cloud Threat Detection & Malware Analysis Platform
+#
+# Filebeat ships logs from Linux, Suricata, Zeek and Azure Activity Logs
+# directly to Elasticsearch.
+#
+# In the final implementation, Filebeat sent data directly to
+# Elasticsearch instead of Logstash to reduce memory usage.
+# ============================================================================
+
+filebeat.inputs:
+
+- type: filestream
+  id: system-logs
+  enabled: true
+  paths:
+    - /var/log/*.log
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 1
+
+output.elasticsearch:
+  hosts: ["https://localhost:9200"]
+  protocol: "https"
+
+  username: "elastic"
+  password: "YOUR_ES_PASSWORD"
+
+  ssl.verification_mode: "none"
+
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~
