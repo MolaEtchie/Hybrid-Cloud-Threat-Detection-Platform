@@ -1,0 +1,15 @@
+# ============================================================================
+# Filebeat Suricata Module Configuration
+# Hybrid Cloud Threat Detection & Malware Analysis Platform
+#
+# Collects Suricata EVE JSON logs and forwards them to Elasticsearch.
+# The default Suricata log location (/var/log/suricata/eve.json) was used.
+# ============================================================================
+
+- module: suricata
+  eve:
+    enabled: true
+
+    # Default log location
+    # var.paths:
+    #   - /var/log/suricata/eve.json
