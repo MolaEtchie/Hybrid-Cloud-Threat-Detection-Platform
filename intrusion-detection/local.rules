@@ -1,0 +1,12 @@
+# ============================================================================
+# Snort 3 Local Detection Rules
+# Hybrid Cloud Threat Detection & Malware Analysis Platform
+#
+# Custom rule used to detect ICMP traffic during attack simulations.
+# ============================================================================
+
+alert icmp any any -> $HOME_NET any (
+    msg:"ICMP Ping Detected";
+    sid:1000001;
+    rev:1;
+)
