@@ -1,0 +1,37 @@
+# ============================================================================
+# Filebeat Azure Module Configuration
+# Hybrid Cloud Threat Detection & Malware Analysis Platform
+#
+# Collects Azure Activity Logs from Azure Event Hub and forwards them to
+# Elasticsearch.
+# ============================================================================
+
+- module: azure
+
+  activitylogs:
+    enabled: true
+
+    var:
+      eventhub: "insights-operational-logs"
+      consumer_group: "$Default"
+
+      # Azure Event Hub connection string
+      connection_string: "YOUR_EVENT_HUB_CONNECTION_STRING"
+
+      # Storage account used to maintain Filebeat offsets
+      storage_account: "YOUR_STORAGE_ACCOUNT"
+
+      # Container for checkpoint information
+      storage_account_container: ""
+
+      # Storage account access key
+      storage_account_key: "YOUR_STORAGE_ACCOUNT_KEY"
+
+  platformlogs:
+    enabled: false
+
+  auditlogs:
+    enabled: false
+
+  signinlogs:
+    enabled: false
