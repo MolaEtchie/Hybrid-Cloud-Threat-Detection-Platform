@@ -16,9 +16,9 @@ The project was developed on Ubuntu Server using the Elastic Stack (Elasticsearc
 
 ## Key Features
 
-- Centralized Security Information and Event Management (SIEM)
+- Centralised Security Information and Event Management (SIEM)
 - Real-time log collection and forwarding
-- Network intrusion detection with Suricata
+- Network intrusion detection using Suricata
 - Signature-based intrusion detection using Snort
 - Network traffic analysis with Zeek
 - Malware detection using custom YARA rules
@@ -154,17 +154,17 @@ Hybrid-Cloud-Threat-Detection-Platform/
 - MITRE ATT&CK Framework Mapping
 - Email and Slack Alerting
 - Machine Learning-Based Anomaly Detection
-- Docker and Kubernetes Deployment
+- Docker Deployment
+- Kubernetes Deployment
 - Multi-node Elasticsearch Cluster
-- Integration with Additional Cloud Platforms
 
 ---
 
 ## Technical Report
 
-A detailed technical report documenting the implementation process, architecture, testing, challenges, and lessons learned is included in this repository.
+A detailed technical report documenting the implementation process, system architecture, testing methodology, challenges encountered, and lessons learned is included in this repository.
 
-**📄 PROJECT_REPORT.pdf**
+📄 **[PROJECT_REPORT.pdf](PROJECT_REPORT.pdf)**
 
 ---
 
@@ -173,6 +173,8 @@ A detailed technical report documenting the implementation process, architecture
 **Mola Faith Etchie**
 
 Cybersecurity Analyst | SOC Analyst | Incident Response
+
+GitHub: https://github.com/MolaEtchie
 
 ---
 
